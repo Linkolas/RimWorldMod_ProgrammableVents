@@ -19,8 +19,11 @@ namespace ProgrammableVents {
         }
 
         public override void TickRare() {
+            // assume air is not flowing
+            InfoPanelUpdate(false);
+
             if (!this.flickableComp.SwitchIsOn) {
-                InfoPanelUpdate(false);
+                // not powered on
                 return;
             }
 
@@ -28,7 +31,7 @@ namespace ProgrammableVents {
             IntVec3 intVec2 = base.Position + IntVec3.North.RotatedBy(base.Rotation);
 
             if (intVec2.Impassable(base.Map) || intVec.Impassable(base.Map)) {
-                InfoPanelUpdate(false);
+                // air can't flow
                 return;
             }
 
@@ -38,10 +41,11 @@ namespace ProgrammableVents {
             
             if ((temp1 >= target && temp2 >= target)
                 || temp1 <= target && temp2 <= target) {
-                InfoPanelUpdate(false);
+                // don't let air flow if it would not help reach target temperature
                 return;
             }
 
+            // all good, air can flow
             InfoPanelUpdate(true);
             GenTemperature.EqualizeTemperaturesThroughBuilding((Building)this, 10f, true);
         }

@@ -44,6 +44,7 @@
 		<designationCategory>Temperature</designationCategory>
 		<comps>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="ProgrammableVents.Comp_ShowAirFlow_Properties"/>
 		</comps>
 	</ThingDef>
 	

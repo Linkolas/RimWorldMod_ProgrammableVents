@@ -9,27 +9,17 @@ namespace ProgrammableVents {
 
     class ClosableVents : Building_TempControl {
 
-        private CompFlickable flickableComp;
-        private Comp_ShowAirFlow airFlowComp;
+        private Comp_ClosableManual closableComp;
 
         public override void SpawnSetup(Map map) {
             base.SpawnSetup(map);
-            this.flickableComp = base.GetComp<CompFlickable>();
-            this.airFlowComp = base.GetComp<Comp_ShowAirFlow>();
+            this.closableComp = base.GetComp<Comp_ClosableManual>();
         }
 
         public override void TickRare() {
-            // assume air is not flowing
-            InfoPanelUpdate(false);
-
-            if (this.flickableComp.SwitchIsOn) {
-                InfoPanelUpdate(true);
+            if (this.closableComp.SwitchIsOn) {
                 GenTemperature.EqualizeTemperaturesThroughBuilding((Building) this, 14f, true);
             }
-        }
-
-        public void InfoPanelUpdate(bool airflow) {
-            airFlowComp.isAirFlowing = airflow;
         }
     }
 }

@@ -51,8 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClosableVents.cs" />
+    <Compile Include="Comp_ClosableManual.cs" />
+    <Compile Include="Comp_Closable.cs" />
+    <Compile Include="Comp_ClosableManual_Properties.cs" />
     <Compile Include="Comp_ShowAirFlow.cs" />
     <Compile Include="Comp_ShowAirFlow_Properties.cs" />
+    <Compile Include="Comp_Closable_Properties.cs" />
     <Compile Include="ProgrammableVents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

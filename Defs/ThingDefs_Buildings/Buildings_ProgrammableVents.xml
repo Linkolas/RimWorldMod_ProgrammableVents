@@ -43,8 +43,7 @@
 		</building>
 		<designationCategory>Temperature</designationCategory>
 		<comps>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="ProgrammableVents.Comp_ShowAirFlow_Properties"/>
+			<li Class="ProgrammableVents.Comp_ClosableManual_Properties"/>
 		</comps>
 	</ThingDef>
 	

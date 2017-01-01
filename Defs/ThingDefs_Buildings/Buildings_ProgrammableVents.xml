@@ -6,7 +6,7 @@
 		<label>closable vent</label>
 		<thingClass>ProgrammableVents.ClosableVents</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Misc/TempControl/Vent</texPath>
+			<texPath>Things/Building/Misc/TempControl/vent_clos</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -52,7 +52,7 @@
 		<label>programmable vent</label>
 		<thingClass>ProgrammableVents.ProgrammableVents</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Misc/TempControl/Vent</texPath>
+			<texPath>Things/Building/Misc/TempControl/vent_prog</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>

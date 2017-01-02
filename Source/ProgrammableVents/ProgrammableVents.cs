@@ -39,8 +39,8 @@ namespace ProgrammableVents {
             float temp2 = intVec2.GetTemperature(base.Map);
             float target = this.compTempControl.targetTemperature;
             
-            if ((temp1 >= target && temp2 >= target)
-                || temp1 <= target && temp2 <= target) {
+            if ((temp1 > target && temp2 > target)
+                || temp1 < target && temp2 < target) {
                 // don't let air flow if it would not help reach target temperature
                 return;
             }

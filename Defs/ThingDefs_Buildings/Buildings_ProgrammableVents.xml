@@ -2,52 +2,6 @@
 <ThingDefs>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>ClosableVent</defName>
-		<label>closable vent</label>
-		<thingClass>ProgrammableVents.ClosableVents</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Misc/TempControl/vent_clos</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-			</damageData>
-		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
-		<fillPercent>1</fillPercent>
-		<coversFloor>true</coversFloor>
-		<blockLight>true</blockLight>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<statBases>
-			<WorkToBuild>400</WorkToBuild>
-			<MaxHitPoints>100</MaxHitPoints>
-			<Flammability>1.0</Flammability>
-		</statBases>
-		<tickerType>Rare</tickerType>
-		<description>A simple closable vent for equalizing the temperature between two rooms without allowing people to walk between them.</description>
-		<costList>
-			<Steel>40</Steel>
-		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<placeWorkers>
-			<li>PlaceWorker_Vent</li>
-		</placeWorkers>
-		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-		<building>
-			<canPlaceOverWall>true</canPlaceOverWall>
-		</building>
-		<designationCategory>Temperature</designationCategory>
-		<comps>
-			<li Class="ProgrammableVents.Comp_ClosableManual_Properties"/>
-		</comps>
-	</ThingDef>
-	
-	<ThingDef ParentName="BuildingBase">
 		<defName>ProgrammableVent</defName>
 		<label>prog. vent</label>
 		<thingClass>ProgrammableVents.ProgrammableVents</thingClass>

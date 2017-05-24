@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>ProgrammableVents_A16</name>
+	<name>ProgrammableVents A17</name>
 	<author>Linkolas</author>
-	<targetVersion>0.16.1393</targetVersion>
-	<description>
+	<targetVersion>0.17.0</targetVersion>
+	<url>https://github.com/Linkolas/RimWorldMod_ProgrammableVents</url>
+	<description>Adds programmable vents!
+ProgrammableVents lets you target a temperature and will only let air flow when useful.
 
-	Adds programmable and closable vents!
-	Programmable vents lets you target a temperature and will only let air pass when useful.
+The logic is quite simple; the air will only flow in these configurations: 
+- Room 1 T° ≤ Target T° ≤ Room 2 T° 
+- Room 1 T° ≥ Target T° ≥ Room 2 T°
+This means it will let the air flow only when it would help a room reach the target temperature.
 
+See project GitHub page for older RimWorld versions (A16+).
 	</description>
 </ModMetaData>

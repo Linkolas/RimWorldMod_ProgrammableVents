@@ -12,12 +12,12 @@ namespace ProgrammableVents {
         private CompFlickable flickableComp;
         private Comp_ShowAirFlow airFlowComp;
 
-        public override void SpawnSetup(Map map) {
-            base.SpawnSetup(map);
+        public override void SpawnSetup(Map map, bool respawningAfterLoad) {
+            base.SpawnSetup(map, respawningAfterLoad);
             this.flickableComp = base.GetComp<CompFlickable>();
             this.airFlowComp = base.GetComp<Comp_ShowAirFlow>();
         }
-
+        
         public override void TickRare() {
             // assume air is not flowing
             InfoPanelUpdate(false);

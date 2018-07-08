@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>ProgrammableVents B18</name>
+	<name>ProgrammableVents 1.0</name>
 	<author>Linkolas</author>
-	<targetVersion>0.18.0</targetVersion>
+	<targetVersion>1.0.0</targetVersion>
 	<url>https://github.com/Linkolas/RimWorldMod_ProgrammableVents</url>
 	<description>Adds programmable vents!
 ProgrammableVents lets you target a temperature and will only let air flow when useful.

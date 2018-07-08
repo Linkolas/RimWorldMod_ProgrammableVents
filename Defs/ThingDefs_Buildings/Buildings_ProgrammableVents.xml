@@ -32,7 +32,7 @@
 		<description>A programmable vent for equalizing the temperature between two rooms without allowing people to walk between them.</description>
 		<costList>
 			<Steel>50</Steel>
-			<Component>1</Component>
+			<ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<placeWorkers>

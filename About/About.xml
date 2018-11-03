@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>ProgrammableVents B19</name>
+	<name>ProgrammableVents</name>
 	<author>Linkolas</author>
-	<targetVersion>0.19.0</targetVersion>
+	<targetVersion>1.0.2059</targetVersion>
 	<url>https://github.com/Linkolas/RimWorldMod_ProgrammableVents</url>
 	<description>Adds programmable vents!
 ProgrammableVents lets you target a temperature and will only let air flow when useful.
@@ -12,6 +12,6 @@ The logic is quite simple; the air will only flow in these configurations:
 - Room 1 T° ≥ Target T° ≥ Room 2 T°
 This means it will let the air flow only when it would help a room reach the target temperature.
 
-See project GitHub page for older RimWorld versions (A16+).
+See project's GitHub page for older RimWorld versions (A16+).
 	</description>
 </ModMetaData>

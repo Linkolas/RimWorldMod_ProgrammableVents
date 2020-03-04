@@ -33,18 +33,6 @@
 		<graphicData>
 			<texPath>Things/Building/Misc/TempControl/vent_prog</texPath>
 		</graphicData>
-		
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
-		<fillPercent>1</fillPercent>
-		<coversFloor>true</coversFloor>
-		<blockLight>true</blockLight>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<building>
-			<canPlaceOverWall>true</canPlaceOverWall>
-		</building>
 	</ThingDef>
 	
 	<ThingDef ParentName="BaseProgrammableVent">
@@ -54,7 +42,7 @@
 			<texPath>Things/Building/Misc/TempControl/vent_prog_ow</texPath>
 		</graphicData>
 		
-		<altitudeLayer>PawnUnused</altitudeLayer>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<blockWind>false</blockWind>
 		<fillPercent>.6</fillPercent>

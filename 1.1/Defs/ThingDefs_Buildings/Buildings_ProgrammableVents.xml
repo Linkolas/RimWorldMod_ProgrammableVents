@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="Vent" Name="BaseProgrammableVent" Abstract="true">
+		<description>A programmable vent for equalizing the temperature between two rooms without allowing people to walk between them.</description>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+	
+		<thingClass>ProgrammableVents.ProgrammableVents</thingClass>
+		<designationCategory>Temperature</designationCategory>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>20</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl"/>
+			<li Class="ProgrammableVents.Comp_ShowAirFlow_Properties"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseProgrammableVent">
+		<defName>ProgrammableVent</defName>
+		<label>prog. vent</label>
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/vent_prog</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseProgrammableVent">
+		<defName>ProgrammableVentOW</defName>
+		<label>over-wall prog. vent</label>
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/vent_prog_ow</texPath>
+		</graphicData>
+		
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>false</blockWind>
+		<fillPercent>.6</fillPercent>
+		<coversFloor>false</coversFloor>
+		<blockLight>false</blockLight>
+		<castEdgeShadows>false</castEdgeShadows>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+		</building>
+		<clearBuildingArea>false</clearBuildingArea>
+	</ThingDef>
+	
+</Defs>

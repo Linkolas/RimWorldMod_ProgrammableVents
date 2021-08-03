@@ -7,22 +7,19 @@ using Verse;
 
 namespace ProgrammableVents {
 
-    class ProgrammableVents : Building_TempControl {
-
-        private CompFlickable flickableComp;
+    class ProgrammableVents : Building_TempControl
+    {
         private Comp_ShowAirFlow airFlowComp;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad) {
             base.SpawnSetup(map, respawningAfterLoad);
-            this.flickableComp = base.GetComp<CompFlickable>();
             this.airFlowComp = base.GetComp<Comp_ShowAirFlow>();
         }
-        
-        public override void TickRare() {
-            // assume air is not flowing
-            InfoPanelUpdate(false);
 
-            if (!this.flickableComp.SwitchIsOn) {
+        public override void TickRare() {
+            airFlowComp.isAirFlowing = false;
+            
+            if (!FlickUtility.WantsToBeOn(this) || !compPowerTrader.PowerOn) {
                 // not powered on
                 return;
             }
@@ -38,7 +35,7 @@ namespace ProgrammableVents {
             float temp1 = intVec.GetTemperature(base.Map);
             float temp2 = intVec2.GetTemperature(base.Map);
             float target = this.compTempControl.targetTemperature;
-            
+
             if ((temp1 > target && temp2 > target)
                 || temp1 < target && temp2 < target) {
                 // don't let air flow if it would not help reach target temperature
@@ -46,12 +43,8 @@ namespace ProgrammableVents {
             }
 
             // all good, air can flow
-            InfoPanelUpdate(true);
-            GenTemperature.EqualizeTemperaturesThroughBuilding((Building)this, 10f, true);
-        }
-
-        public void InfoPanelUpdate(bool airflow) {
-            airFlowComp.isAirFlowing = airflow;
+            airFlowComp.isAirFlowing = true;
+            GenTemperature.EqualizeTemperaturesThroughBuilding((Building)this, 14f, true);
         }
     }
 }

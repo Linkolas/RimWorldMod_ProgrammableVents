@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase" Name="BaseProgrammableVent" Abstract="true">
+	
+		<!-- 
+			This is basically a save of the Vent building, with adjusted values. 
+			Had to be done to remove the Flickable comp added UI button.
+		-->
+
+		<defName>ProgrammableVentBase</defName>
+		<label>prog. vent base</label>
+		<description>A programmable vent for equalizing the temperature between two rooms without allowing people to walk between them.</description>
+		
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/Vent</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<castEdgeShadows>true</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_Vent</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<designationCategory>Temperature</designationCategory>
+	
+	
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+	
+		<thingClass>ProgrammableVents.ProgrammableVents</thingClass>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>20</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl"/>
+			<li Class="ProgrammableVents.Comp_ShowAirFlow_Properties"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseProgrammableVent">
+		<defName>ProgrammableVent</defName>
+		<label>prog. vent</label>
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/vent_prog</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseProgrammableVent">
+		<defName>ProgrammableVentOW</defName>
+		<label>over-wall prog. vent</label>
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/vent_prog_ow</texPath>
+		</graphicData>
+		
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>false</blockWind>
+		<fillPercent>.6</fillPercent>
+		<coversFloor>false</coversFloor>
+		<blockLight>false</blockLight>
+		<castEdgeShadows>false</castEdgeShadows>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+		</building>
+		<clearBuildingArea>false</clearBuildingArea>
+	</ThingDef>
+	
+</Defs>
